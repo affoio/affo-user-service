@@ -1,3 +1,5 @@
+import os
+
 from affo_email_client import Client as EmailClient
 
 from flask_caching import Cache
@@ -24,4 +26,4 @@ guard = Praetorian()
 
 ma = Marshmallow()
 
-migrate = Migrate()
+migrate = Migrate(directory=os.path.join(os.path.dirname(os.path.abspath(__file__)), "migrations"))

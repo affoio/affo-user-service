@@ -4,7 +4,7 @@ Flask-SQLAlchemy>=2.4.0
 Flask-Script>=2.0.6
 PyJWT>=1.7.1
 SQLAlchemy-Utils>=0.33.11
-affo-email-client>=1.0.0
+affo-email-client>=1.0.1
 argon2-cffi>=19.1.0
 connexion==2.4.0
 connexion-buzz>=0.2.0
