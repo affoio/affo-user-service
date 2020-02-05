@@ -49,7 +49,7 @@ def reset_confirm(password_reset_confirm):
 
         NoSuchUser.require_condition(user_, "The user with {email} email does not exist", email=email)
 
-        user_.password = guard.encrypt_password(password_reset_confirm["new_password"])
+        user_.password = guard.hash_password(password_reset_confirm["new_password"])
 
         db.session.add(user_)
 

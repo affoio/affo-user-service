@@ -51,7 +51,7 @@ def provisioning(app):
                         continue
 
                     user_data["email"] = user_email
-                    user_data["password"] = guard.encrypt_password(user_data["password"])
+                    user_data["password"] = guard.hash_password(user_data["password"])
 
                     user_ = User(**user_data)
                     db.session.add(user_)

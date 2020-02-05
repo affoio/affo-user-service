@@ -1,6 +1,6 @@
 import random
 
-from werkzeug import import_string
+from werkzeug.utils import import_string
 
 from affo_user_service import settings
 

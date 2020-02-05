@@ -31,7 +31,7 @@ def create(user):
         )
 
         if user["password"]:
-            user["password"] = guard.encrypt_password(user["password"])
+            user["password"] = guard.hash_password(user["password"])
 
         user_ = User(**user)
         db.session.add(user_)
@@ -90,7 +90,7 @@ def delete(user_id):
 def set_password(user_id, password):
     with db.session.begin(subtransactions=True):
         user_ = get_user_by_id(user_id)
-        user_.password = guard.encrypt_password(password["password"])
+        user_.password = guard.hash_password(password["password"])
 
         db.session.add(user_)
 
